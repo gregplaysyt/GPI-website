@@ -541,6 +541,30 @@ p {
   text-align: center;
 }
 
+.funder-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--gpi-divider);
+  background: #fff;
+  color: var(--gpi-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.funder-play:hover {
+  background: var(--gpi-primary);
+  color: #fff;
+  border-color: var(--gpi-primary);
+}
+
+.funder-play:active {
+  transform: scale(0.94);
+}
+
 /* ---------- Avatar dot ---------- */
 .avatar-dot {
   width: 28px;
