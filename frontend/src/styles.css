@@ -1,0 +1,358 @@
+/* ============================================================
+   GPI design tokens — colours, type and spacing from the design.
+   ============================================================ */
+:root {
+  /* Brand */
+  --gpi-primary: #b4285a;
+  --gpi-primary-dark: #8e1f48;
+  --gpi-primary-tint: #f8e9ee;
+  --gpi-primary-soft: #e4cdd6;
+  --gpi-pink-on-dark: #f2b8cd;
+
+  /* Ink / neutrals */
+  --gpi-ink: #12141a;
+  --gpi-ink-soft: #23252c;
+  --gpi-body: #5c5750;
+  --gpi-muted: #6b655d;
+  --gpi-icon: #8a8177;
+  --gpi-faint: #b9b2aa;
+  --gpi-dot: #c6bfb6;
+  --gpi-quote: #3d1226;
+
+  /* Surfaces */
+  --gpi-cream: #fbf7f3;
+  --gpi-nav: #fbfaf8;
+  --gpi-white: #ffffff;
+  --gpi-divider: #ede7df;
+  --gpi-image: #e4dcd2;
+  --gpi-image-2: #ddd4c9;
+
+  /* Programme accents */
+  --gpi-green: #1f6f5c;
+  --gpi-green-tint: #e7f1ee;
+  --gpi-green-avatar: #d9e6e1;
+  --gpi-amber: #a65c12;
+  --gpi-amber-tint: #fdf1e0;
+  --gpi-amber-avatar: #f5e5cb;
+  --gpi-purple: #4b4184;
+  --gpi-purple-tint: #edeaf6;
+
+  /* Type */
+  --gpi-serif: 'Fraunces', Georgia, serif;
+  --gpi-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Radii */
+  --gpi-radius-pill: 999px;
+  --gpi-radius-xl: 24px;
+  --gpi-radius-lg: 20px;
+  --gpi-radius-md: 16px;
+  --gpi-radius-sm: 14px;
+  --gpi-radius-xs: 12px;
+
+  /* Shadows */
+  --gpi-shadow-card: 0 2px 8px rgba(15, 23, 42, 0.07), 0 12px 28px rgba(15, 23, 42, 0.05);
+  --gpi-shadow-raised: 0 6px 16px rgba(30, 35, 51, 0.1), 0 24px 56px rgba(30, 35, 51, 0.1);
+
+  /* Layout */
+  --gpi-gutter: 64px;
+  --gpi-section-y: 96px;
+  --gpi-max: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--gpi-sans);
+  color: var(--gpi-body);
+  background: var(--gpi-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--gpi-ink);
+  font-family: var(--gpi-serif);
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--gpi-max);
+  margin: 0 auto;
+  padding-left: var(--gpi-gutter);
+  padding-right: var(--gpi-gutter);
+}
+
+.section {
+  padding-top: var(--gpi-section-y);
+  padding-bottom: var(--gpi-section-y);
+}
+
+/* ---------- Type utilities ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--gpi-primary);
+}
+
+.h1 {
+  font-family: var(--gpi-serif);
+  font-weight: 700;
+  font-size: 62px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--gpi-ink);
+}
+
+.h2 {
+  font-family: var(--gpi-serif);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.18;
+  letter-spacing: -0.8px;
+  color: var(--gpi-ink);
+}
+
+.h3 {
+  font-family: var(--gpi-serif);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: var(--gpi-ink);
+}
+
+.lead {
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--gpi-body);
+}
+
+.body-text {
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--gpi-body);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 26px;
+  border-radius: var(--gpi-radius-pill);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+.btn:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-primary {
+  background: var(--gpi-primary);
+  color: var(--gpi-white);
+}
+.btn-outline {
+  background: var(--gpi-white);
+  color: var(--gpi-ink);
+  box-shadow: inset 0 0 0 1px var(--gpi-divider);
+}
+.btn-dark {
+  background: var(--gpi-ink);
+  color: var(--gpi-white);
+}
+.btn-sm {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 13px;
+}
+.btn-sm svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Small "pill" link button (All causes, All events) */
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 41px;
+  padding: 0 20px;
+  border-radius: var(--gpi-radius-pill);
+  background: var(--gpi-cream);
+  color: var(--gpi-ink);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+.link-pill:hover {
+  background: var(--gpi-primary-tint);
+}
+.link-pill svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Section header ---------- */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 56px;
+}
+.section-head-copy {
+  max-width: 620px;
+}
+.section-head-copy .h2 {
+  margin-top: 12px;
+}
+.section-head-body {
+  max-width: 460px;
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--gpi-body);
+}
+
+/* ---------- Tags / pills ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 25px;
+  padding: 0 12px;
+  border-radius: var(--gpi-radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.tag svg {
+  width: 13px;
+  height: 13px;
+}
+
+.value-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 27px;
+  padding: 0 12px;
+  border-radius: var(--gpi-radius-pill);
+  background: var(--gpi-cream);
+  color: var(--gpi-ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ---------- Photo media (background image with a neutral fallback) ---------- */
+.media {
+  background-color: var(--gpi-image);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- Card base ---------- */
+.card {
+  background: var(--gpi-white);
+  border-radius: var(--gpi-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--gpi-shadow-card);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(30, 41, 59, 0.12);
+}
+
+/* ---------- Meta row (icon + text) ---------- */
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--gpi-ink);
+}
+.meta svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gpi-icon);
+}
+
+/* ---------- Avatar dot ---------- */
+.avatar-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gpi-primary-soft);
+  flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  :root {
+    --gpi-gutter: 32px;
+    --gpi-section-y: 64px;
+  }
+  .h1 { font-size: 44px; }
+  .h2 { font-size: 34px; }
+  .h3 { font-size: 32px; }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gpi-gutter: 20px;
+  }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .h1 { font-size: 34px; }
+  .h2 { font-size: 28px; }
+}
