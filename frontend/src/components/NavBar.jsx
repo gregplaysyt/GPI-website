@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Search, HandHeart, Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Search, HandHeart, Menu, X, ArrowRight } from 'lucide-react';
+import { EASE } from '../motion.jsx';
 
 const links = [
   { to: '/', label: 'Home' },
@@ -13,6 +15,17 @@ const links = [
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+
+  // Lock page scroll while the mobile menu is open, and close on Escape.
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
 
   return (
     <header
@@ -43,6 +56,7 @@ export default function NavBar() {
               fontWeight: 700,
               fontSize: 16,
               letterSpacing: 0.5,
+              flexShrink: 0,
             }}
           >
             GPI
@@ -128,7 +142,8 @@ export default function NavBar() {
         {/* Mobile toggle */}
         <button
           className="mobile-toggle"
-          aria-label="Menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           style={{ marginLeft: 'auto', display: 'none' }}
         >
@@ -136,35 +151,81 @@ export default function NavBar() {
         </button>
       </div>
 
-      {open && (
-        <nav
-          className="mobile-menu"
-          style={{
-            display: 'none',
-            flexDirection: 'column',
-            gap: 4,
-            padding: '0 20px 20px',
-            background: 'var(--gpi-nav)',
-          }}
-        >
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              className="mobile-scrim"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
               onClick={() => setOpen(false)}
-              style={{ padding: '10px 0', fontSize: 15, fontWeight: 500, color: '#3a3a40' }}
+            />
+            <motion.nav
+              className="mobile-menu"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: EASE }}
+              aria-label="Mobile navigation"
             >
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
-      )}
+              <motion.ul
+                className="mobile-menu-list"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
+                }}
+              >
+                {links.map((l) => (
+                  <motion.li
+                    key={l.to}
+                    variants={{
+                      hidden: { opacity: 0, x: -16 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: EASE } },
+                    }}
+                  >
+                    <NavLink
+                      to={l.to}
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) => `mobile-menu-link${isActive ? ' active' : ''}`}
+                    >
+                      <span>{l.label}</span>
+                      <ArrowRight size={18} className="mobile-menu-arrow" />
+                    </NavLink>
+                  </motion.li>
+                ))}
+              </motion.ul>
+
+              <motion.div
+                className="mobile-menu-cta"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, ease: EASE, delay: 0.28 }}
+              >
+                <Link
+                  to="/causes"
+                  onClick={() => setOpen(false)}
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  <HandHeart size={17} />
+                  Donate
+                </Link>
+                <p>Support girls across Nigeria, one gift at a time.</p>
+              </motion.div>
+            </motion.nav>
+          </>
+        )}
+      </AnimatePresence>
 
       <style>{`
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: inline-flex !important; }
-          .mobile-menu { display: flex !important; }
         }
       `}</style>
     </header>

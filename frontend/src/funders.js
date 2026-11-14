@@ -1,6 +1,9 @@
 // GPI's funders and partners, pulled from the "Our Funders" section of
 // gpinigeria.org. Logos are stored locally under public/images/funders/.
-const F = (name) => `/images/funders/${name}`;
+// BASE_URL is "/" locally and "/GPI-website/" on GitHub Pages, so logo URLs
+// work in both places (a bare "/images/..." would 404 on Pages).
+const BASE = import.meta.env.BASE_URL;
+const F = (name) => `${BASE}images/funders/${name}`;
 
 export const funders = [
   { name: 'ARFH', logo: F('arfh.png') },

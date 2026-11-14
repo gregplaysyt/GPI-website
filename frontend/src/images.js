@@ -1,7 +1,10 @@
 // Real GPI photos pulled from gpinigeria.org and stored locally under
 // public/images/content/. The design carried no image assets, so each slot is
 // given a thematically relevant photo from GPI's own library.
-const C = (name) => `/images/content/${name}`;
+// BASE_URL is "/" locally and "/GPI-website/" on GitHub Pages, so image URLs
+// work in both places (a bare "/images/..." would 404 on Pages).
+const BASE = import.meta.env.BASE_URL;
+const C = (name) => `${BASE}images/content/${name}`;
 
 export const IMG = {
   // Hero and large editorial images

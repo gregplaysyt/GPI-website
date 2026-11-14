@@ -376,6 +376,171 @@ p {
   box-shadow: 0 8px 20px rgba(191, 54, 84, 0.28);
 }
 
+/* ---------- Mobile menu ---------- */
+.mobile-scrim {
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: rgba(18, 20, 26, 0.42);
+  backdrop-filter: blur(2px);
+  z-index: 48;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: var(--gpi-nav);
+  border-bottom: 1px solid #e8e0d6;
+  box-shadow: 0 24px 48px rgba(30, 35, 51, 0.18);
+  padding: 12px 20px 24px;
+  z-index: 49;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu-list li + li {
+  border-top: 1px solid var(--gpi-divider);
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 4px;
+  font-family: var(--gpi-sans);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gpi-ink);
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.mobile-menu-link:hover {
+  color: var(--gpi-primary);
+  padding-left: 6px;
+}
+
+.mobile-menu-link.active {
+  color: var(--gpi-primary);
+  font-weight: 600;
+}
+
+.mobile-menu-arrow {
+  color: var(--gpi-icon);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.mobile-menu-link:hover .mobile-menu-arrow,
+.mobile-menu-link.active .mobile-menu-arrow {
+  color: var(--gpi-primary);
+  transform: translateX(2px);
+}
+
+.mobile-menu-cta {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gpi-divider);
+}
+
+.mobile-menu-cta p {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--gpi-muted);
+  text-align: center;
+}
+
+.mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f2ece5;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.mobile-toggle:active {
+  transform: scale(0.94);
+}
+
+/* ---------- Funders carousel (mobile) ---------- */
+.funders-carousel {
+  display: none;
+}
+
+.funders-track {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 20px 4px;
+  scrollbar-width: none;      /* Firefox: hide the scrollbar */
+  -ms-overflow-style: none;   /* IE/Edge: hide the scrollbar */
+}
+
+.funders-track::-webkit-scrollbar {
+  display: none;              /* hide the scrollbar for a clean look */
+}
+
+.funders-track .funder-tile {
+  flex: 0 0 auto;
+  width: 148px;
+  scroll-snap-align: start;
+}
+
+.funders-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.funder-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--gpi-divider);
+  background: #fff;
+  color: var(--gpi-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.funder-arrow:hover:not(:disabled) {
+  background: var(--gpi-primary);
+  color: #fff;
+  border-color: var(--gpi-primary);
+}
+
+.funder-arrow:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.funder-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.funder-counter {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gpi-muted);
+  min-width: 44px;
+  text-align: center;
+}
+
 /* ---------- Avatar dot ---------- */
 .avatar-dot {
   width: 28px;
@@ -394,6 +559,11 @@ p {
   .h1 { font-size: 44px; }
   .h2 { font-size: 34px; }
   .h3 { font-size: 32px; }
+}
+
+/* Match the mobile menu breakpoint: slim the header as soon as the menu appears. */
+@media (max-width: 900px) {
+  .header-bar { height: 64px !important; }
 }
 
 @media (max-width: 720px) {
@@ -420,6 +590,12 @@ p {
   .faq-side { flex: 1 1 auto !important; max-width: none !important; }
   .donate-actions { align-items: flex-start !important; }
   .header-bar { height: 64px !important; }
+  /* Funders: swap the grid for a swipeable carousel on phones. */
+  .funders-grid { display: none !important; }
+  .funders-carousel {
+    display: block !important;
+    margin-top: 8px;
+  }
   /* Cap tall hero/feature images so they read as a full-bleed photo on phones. */
   .media { max-height: 340px !important; }
   /* Stats band: drop side borders/padding when stacked. */
