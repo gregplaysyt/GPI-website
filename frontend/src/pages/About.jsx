@@ -38,6 +38,7 @@ function Hero() {
       lead={hero.body}
     >
       <Reveal delay={0.1}
+        className="m-full"
         style={{
           width: 380, background: 'var(--gpi-white)', borderRadius: 20,
           boxShadow: 'var(--gpi-shadow-raised)', padding: 28, flexShrink: 0,
@@ -70,7 +71,7 @@ function OriginStory() {
   return (
     <section className="section" style={{ background: '#fff' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '560px 1fr', gap: 72, alignItems: 'center' }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: '560px 1fr', gap: 72, alignItems: 'center' }}>
           <Reveal>
             <div className="media" style={{ borderRadius: 28, height: 600, boxShadow: 'var(--gpi-shadow-raised)', position: 'relative', backgroundImage: `url(${IMG.origin})` }}>
               <div style={{ position: 'absolute', left: 24, bottom: 24, background: '#fff', borderRadius: 999, padding: '12px 16px', display: 'inline-flex', alignItems: 'center', gap: 10, boxShadow: '0 12px 28px rgba(30,41,59,0.12)' }}>
@@ -93,7 +94,7 @@ function OriginStory() {
               unchanged: start with what girls already know, add accurate information, and let them lead.
             </p>
 
-            <div style={{ display: 'flex', gap: 0, marginTop: 32 }}>
+            <div style={{ display: 'flex', gap: 0, marginTop: 32, flexWrap: 'wrap', rowGap: 20 }}>
               {stats.map((s, i) => (
                 <div key={s.label} style={{ display: 'flex', gap: 0, alignItems: 'center' }}>
                   {i > 0 && <div style={{ width: 1, height: 48, background: 'var(--gpi-image)', margin: '0 32px' }} />}
@@ -140,7 +141,7 @@ function Timeline() {
           </p>
         </Reveal>
 
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 32, marginTop: 48 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 32, marginTop: 48 }}>
           {items.map((it) => (
             <StaggerItem key={it.year}>
               <span
@@ -167,7 +168,7 @@ function Timeline() {
 /* ------------------------ Values & leadership ---------------------- */
 function ValuesLeadership() {
   const values = [
-    { n: '01', title: 'Feminism', body: 'We name patriarchy as the problem, not girls as the failure.', tint: '#F8E9EE', fg: '#8E1F48', accent: false },
+    { n: '01', title: 'Feminism', body: 'We name patriarchy as the problem, not girls as the failure.', tint: '#F8E9EE', fg: '#A52A46', accent: false },
     { n: '02', title: 'Integrity', body: 'What we tell a girl in a club is what we tell a donor in a report.', tint: '#E7F1EE', fg: '#1F6F5C', accent: false },
     { n: '03', title: 'Accountability', body: 'Every programme is measured with the people it is meant to serve.', tint: '#FDF1E0', fg: '#A65C12', accent: false },
     { n: '04', title: 'Solidarity', body: 'We work with boys, families, schools and rulers, not against them.', tint: '#EDEAF6', fg: '#4B4184', accent: false },
@@ -183,7 +184,7 @@ function ValuesLeadership() {
     <section className="section" style={{ background: 'var(--gpi-cream)' }}>
       <div className="container">
         {/* Values */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40 }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40 }}>
           <div style={{ maxWidth: 560 }}>
             <span className="eyebrow">What we hold</span>
             <h2 className="h2" style={{ marginTop: 12 }}>Five commitments we do not trade.</h2>
@@ -194,7 +195,7 @@ function ValuesLeadership() {
           </p>
         </div>
 
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24, marginTop: 48 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24, marginTop: 48 }}>
           {values.map((v) => (
             <StaggerItem
               key={v.n}
@@ -222,7 +223,7 @@ function ValuesLeadership() {
         </Stagger>
 
         {/* Leadership */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, marginTop: 80 }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, marginTop: 80 }}>
           <div style={{ maxWidth: 620 }}>
             <span className="eyebrow">Leadership</span>
             <h2 className="h2" style={{ marginTop: 12, fontSize: 40, lineHeight: 1.2 }}>Nigerian feminists, all the way up.</h2>
@@ -232,7 +233,7 @@ function ValuesLeadership() {
           </Link>
         </div>
 
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 48 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 48 }}>
           {leaders.map((l) => (
             <StaggerItem key={l.name}>
               <div
@@ -268,7 +269,7 @@ function Centres() {
   return (
     <section className="section" style={{ background: '#fff' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40 }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40 }}>
           <div style={{ maxWidth: 560 }}>
             <span className="eyebrow">Where we are</span>
             <h2 className="h2" style={{ marginTop: 12, fontSize: 40, lineHeight: 1.2 }}>Five centres, one network.</h2>
@@ -284,6 +285,7 @@ function Centres() {
             <StaggerItem key={c.name}>
               {i > 0 && <div style={{ height: 1, background: 'var(--gpi-divider)' }} />}
               <div
+                className="r-grid"
                 style={{
                   display: 'grid', gridTemplateColumns: '48px 280px 260px 1fr auto', gap: 16,
                   alignItems: 'center', padding: '24px 0',

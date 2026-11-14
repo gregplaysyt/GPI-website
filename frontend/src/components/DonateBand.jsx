@@ -6,6 +6,7 @@ export default function DonateBand() {
     <section style={{ background: 'var(--gpi-primary)', color: '#fff' }}>
       <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
         <div
+          className="r-row"
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             gap: 48, flexWrap: 'wrap',
@@ -28,7 +29,7 @@ export default function DonateBand() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 16 }}>
+          <div className="donate-actions" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 16 }}>
             <Link
               to="/causes"
               className="btn btn-dark"

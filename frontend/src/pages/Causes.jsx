@@ -292,7 +292,7 @@ function Spotlight() {
             </div>
           </div>
 
-          <div style={{ flex: '0 0 420px', background: 'var(--gpi-primary)', padding: 40, display: 'flex', flexDirection: 'column' }}>
+          <div className="spotlight-side" style={{ flex: '0 0 420px', background: 'var(--gpi-primary)', padding: 40, display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1.4, textTransform: 'uppercase', color: '#FBE4EA' }}>
               Support this cause
             </span>
@@ -332,7 +332,7 @@ function Faq() {
     <section style={{ background: 'var(--gpi-cream)', paddingBottom: 96 }}>
       <div className="container">
         <div style={{ display: 'flex', gap: 72, flexWrap: 'wrap', alignItems: 'flex-start' }}>
-          <Reveal style={{ flex: '0 0 420px', maxWidth: 420 }}>
+          <Reveal className="faq-side" style={{ flex: '0 0 420px', maxWidth: 420 }}>
             <span className="eyebrow">Questions</span>
             <h2
               style={{
@@ -391,7 +391,7 @@ function PlusIcon() {
 function MinusIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <path d="M3 9h12" stroke="#B4285A" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M3 9h12" stroke="#BF3654" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }

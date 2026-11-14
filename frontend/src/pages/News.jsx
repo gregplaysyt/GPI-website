@@ -90,7 +90,7 @@ function Hero({ query, setQuery, active, setActive }) {
 }
 
 function PageHeroWrap({ children }) {
-  return <div style={{ display: 'flex', justifyContent: 'space-between', gap: 40, alignItems: 'flex-start' }}>{children}</div>;
+  return <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', gap: 40, alignItems: 'flex-start' }}>{children}</div>;
 }
 
 function FeaturedStory({ article }) {
@@ -98,8 +98,8 @@ function FeaturedStory({ article }) {
   return (
     <section style={{ background: '#fff', paddingTop: 56, paddingBottom: 56 }}>
       <div className="container">
-        <Reveal style={{ background: 'var(--gpi-ink)', borderRadius: 28, boxShadow: 'var(--gpi-shadow-raised)', display: 'flex', overflow: 'hidden' }}>
-          <div className="media" style={{ width: 620, minHeight: 391, backgroundImage: `url(${photoFor(article.category)})` }} />
+        <Reveal className="r-col" style={{ background: 'var(--gpi-ink)', borderRadius: 28, boxShadow: 'var(--gpi-shadow-raised)', display: 'flex', overflow: 'hidden' }}>
+          <div className="media m-full" style={{ width: 620, minHeight: 391, backgroundImage: `url(${photoFor(article.category)})` }} />
           <div style={{ flex: 1, padding: 44, display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <span className="tag" style={{ background: 'var(--gpi-primary)', color: '#fff' }}>Long read</span>
@@ -133,14 +133,14 @@ function ArticlesGrid({ articles }) {
   return (
     <section className="section" style={{ background: 'var(--gpi-cream)' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40 }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40 }}>
           <h2 className="h2" style={{ fontSize: 28 }}>Latest from the centres</h2>
           <span className="link-pill" style={{ background: '#fff', fontSize: 12 }}>Newest first</span>
         </div>
 
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {articles.map((n) => {
-            const color = newsCategoryColors[n.category] || '#B4285A';
+            const color = newsCategoryColors[n.category] || '#BF3654';
             const label = newsCategoryLabels[n.category] || 'Story';
             return (
               <StaggerItem key={n.id} className="card" style={{ borderRadius: 24 }}>

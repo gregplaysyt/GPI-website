@@ -3,8 +3,8 @@
    ============================================================ */
 :root {
   /* Brand */
-  --gpi-primary: #b4285a;
-  --gpi-primary-dark: #8e1f48;
+  --gpi-primary: #bf3654;
+  --gpi-primary-dark: #a52a46;
   --gpi-primary-tint: #f8e9ee;
   --gpi-primary-soft: #e4cdd6;
   --gpi-pink-on-dark: #f2b8cd;
@@ -324,6 +324,58 @@ p {
   color: var(--gpi-icon);
 }
 
+/* ---------- Header hover ---------- */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3a3a40;
+  transition: color 0.2s ease;
+}
+.nav-link.active {
+  color: var(--gpi-primary);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gpi-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover {
+  color: var(--gpi-primary);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.header-icon-btn {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.header-icon-btn:hover {
+  background: var(--gpi-primary-tint);
+  transform: translateY(-2px);
+}
+
+.header-donate {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.header-donate:hover {
+  background: var(--gpi-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(191, 54, 84, 0.28);
+}
+
 /* ---------- Avatar dot ---------- */
 .avatar-dot {
   width: 28px;
@@ -347,12 +399,30 @@ p {
 @media (max-width: 720px) {
   :root {
     --gpi-gutter: 20px;
+    --gpi-section-y: 56px;
   }
   .section-head {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
   }
-  .h1 { font-size: 34px; }
+  .h1 { font-size: 36px; }
   .h2 { font-size: 28px; }
+  .h3 { font-size: 26px; }
+
+  /* Mobile layout helpers: collapse fixed inline grids and rows. */
+  .r-grid { grid-template-columns: 1fr !important; }
+  .r-row { flex-direction: column !important; align-items: flex-start !important; }
+  .r-col { flex-direction: column !important; }
+  .hero-media { flex: 1 1 auto !important; width: 100% !important; }
+  .m-full { width: 100% !important; }
+  .spotlight-side { flex: 1 1 auto !important; min-width: 0 !important; }
+  .faq-side { flex: 1 1 auto !important; max-width: none !important; }
+  .donate-actions { align-items: flex-start !important; }
+  .header-bar { height: 64px !important; }
+  /* Cap tall hero/feature images so they read as a full-bleed photo on phones. */
+  .media { max-height: 340px !important; }
+  /* Stats band: drop side borders/padding when stacked. */
+  .stats-band > * { padding: 16px 0 !important; border-left: none !important; border-top: 1px solid var(--gpi-image) !important; }
+  .stats-band > *:first-child { border-top: none !important; padding-top: 0 !important; }
 }

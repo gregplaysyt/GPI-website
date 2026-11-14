@@ -18,7 +18,7 @@ const programmeIcons = {
   coins: HandCoins,
 };
 const programmeTints = {
-  '#B4285A': '#F8E9EE',
+  '#BF3654': '#F8E9EE',
   '#1F6F5C': '#E7F1EE',
   '#A65C12': '#FDF1E0',
   '#4B4184': '#EDEAF6',
@@ -26,7 +26,7 @@ const programmeTints = {
 
 // Photo for each programme block, keyed by its accent colour.
 const programmePhotos = {
-  '#B4285A': IMG.protection,
+  '#BF3654': IMG.protection,
   '#1F6F5C': IMG.health,
   '#A65C12': IMG.leadership,
   '#4B4184': IMG.livelihood,
@@ -38,7 +38,7 @@ const programmes = [
     id: 1,
     label: 'Programme 01',
     eyebrow: 'Protection',
-    accent: '#B4285A',
+    accent: '#BF3654',
     headline: 'Protection of the girl child and young females.',
     body: "The socialisation of girls weakens their protection and their decision making in public and private spheres. We work with girls, their families and local authorities so that protection becomes a shared duty rather than a private hope.",
     outcomes: [
@@ -92,7 +92,7 @@ const barriers = [
   {
     label: 'Barrier 01',
     icon: Scale,
-    color: '#B4285A',
+    color: '#BF3654',
     tint: '#F8E9EE',
     title: 'Patriarchal values and gender stereotypes',
     body: 'Girls are taught to defer before they are taught to read. The message arrives from family, school, worship and media at once.',

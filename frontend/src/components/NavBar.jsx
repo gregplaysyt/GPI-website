@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Search, HandHeart, Menu, X } from 'lucide-react';
 
 const links = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/what-we-do', label: 'What we do' },
   { to: '/causes', label: 'Our causes' },
@@ -24,11 +25,11 @@ export default function NavBar() {
       }}
     >
       <div
-        className="container"
+        className="container header-bar"
         style={{ display: 'flex', alignItems: 'center', height: 88, gap: 24 }}
       >
         {/* Brand */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
           <span
             style={{
               width: 44,
@@ -46,7 +47,7 @@ export default function NavBar() {
           >
             GPI
           </span>
-          <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
+          <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2, minWidth: 0 }}>
             <span style={{ fontSize: 15, fontWeight: 700, color: '#6b655d' }}>
               Girls' Power Initiative
             </span>
@@ -79,11 +80,7 @@ export default function NavBar() {
             <NavLink
               key={l.to}
               to={l.to}
-              style={({ isActive }) => ({
-                fontSize: 14,
-                fontWeight: 500,
-                color: isActive ? 'var(--gpi-primary)' : '#3a3a40',
-              })}
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
             >
               {l.label}
             </NavLink>
@@ -94,6 +91,7 @@ export default function NavBar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="desktop-nav">
           <button
             aria-label="Search"
+            className="header-icon-btn"
             style={{
               width: 44,
               height: 44,
@@ -108,6 +106,7 @@ export default function NavBar() {
           </button>
           <Link
             to="/causes"
+            className="header-donate"
             style={{
               display: 'inline-flex',
               alignItems: 'center',

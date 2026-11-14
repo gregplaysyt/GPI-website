@@ -66,7 +66,7 @@ const ways = [
     bodyColor: '#FBE4EA',
     cta: 'Start giving',
     ctaBg: '#fff',
-    ctaColor: '#8E1F48',
+    ctaColor: '#A52A46',
     to: '/causes',
   },
   {

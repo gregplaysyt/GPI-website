@@ -24,7 +24,7 @@ import { Reveal, Stagger, StaggerItem } from '../motion.jsx';
 const programmeIcons = {
   shield: ShieldCheck, 'heart-pulse': HeartPulse, megaphone: Megaphone, coins: HandCoins,
 };
-const programmeTints = { '#B4285A': '#F8E9EE', '#1F6F5C': '#E7F1EE', '#A65C12': '#FDF1E0', '#4B4184': '#EDEAF6' };
+const programmeTints = { '#BF3654': '#F8E9EE', '#1F6F5C': '#E7F1EE', '#A65C12': '#FDF1E0', '#4B4184': '#EDEAF6' };
 
 function metaIcon(cat) {
   const map = { education: MapPin, 'safe-spaces': Clock, health: Users, livelihood: Users, protection: MapPin };
@@ -72,7 +72,7 @@ function Hero() {
   return (
     <section style={{ background: 'var(--gpi-cream)' }}>
       <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
-        <div style={{ display: 'flex', gap: 64, alignItems: 'center' }}>
+        <div className="r-row" style={{ display: 'flex', gap: 64, alignItems: 'center' }}>
           <Reveal style={{ flex: '1 1 640px', maxWidth: 640 }}>
             <span
               className="eyebrow"
@@ -90,17 +90,17 @@ function Hero() {
             <p className="lead" style={{ marginTop: 24, maxWidth: 540 }}>
               {hero.body}
             </p>
-            <div style={{ display: 'flex', gap: 16, marginTop: 32 }}>
+            <div className="r-row" style={{ display: 'flex', gap: 16, marginTop: 32 }}>
               <Link to="/causes" className="btn btn-primary">Support our work <ArrowRight /></Link>
               <Link to="/what-we-do" className="btn btn-outline">Explore what we do <ArrowUpRight /></Link>
             </div>
-            <div style={{ display: 'flex', gap: 28, marginTop: 28, fontSize: 12, color: 'var(--gpi-muted)' }}>
+            <div style={{ display: 'flex', gap: 28, marginTop: 28, fontSize: 12, color: 'var(--gpi-muted)', flexWrap: 'wrap' }}>
               <span className="meta" style={{ color: 'var(--gpi-muted)' }}><BadgeCheck size={16} /> UN ECOSOC consultative status</span>
               <span className="meta" style={{ color: 'var(--gpi-muted)' }}><MapPin size={16} /> 5 centres across Nigeria</span>
             </div>
           </Reveal>
 
-          <div style={{ flex: '0 0 608px' }}>
+          <div className="hero-media" style={{ flex: '0 0 608px' }}>
             <div
               className="media"
               style={{ borderRadius: 24, height: 560, boxShadow: 'var(--gpi-shadow-raised)', position: 'relative', backgroundImage: `url(${IMG.hero})` }}
@@ -140,7 +140,7 @@ function StatsBand() {
   return (
     <section style={{ background: 'var(--gpi-ink)' }}>
       <div className="container" style={{ paddingTop: 56, paddingBottom: 56 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 40 }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 40 }}>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--gpi-faint)', maxWidth: 520, margin: 0 }}>
             A movement built over three decades of feminist organising with girls, families and communities.
           </p>
@@ -148,7 +148,7 @@ function StatsBand() {
             Read our story <ArrowRight size={16} />
           </Link>
         </div>
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, marginTop: 40 }}>
+        <Stagger className="r-grid stats-band" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, marginTop: 40 }}>
           {stats.map((s, i) => (
             <StaggerItem
               key={s.value}
@@ -179,7 +179,7 @@ function ProgrammesSection({ programmes }) {
           title="Four ways we build girls' power."
           body="Our work starts with the reality girls live in, then builds the knowledge, safety and solidarity that let them decide for themselves."
         />
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
           {programmes.map((p) => {
             const Icon = programmeIcons[p.icon] || ShieldCheck;
             const tint = programmeTints[p.accent] || '#F8E9EE';
@@ -212,7 +212,7 @@ function CausesSection({ causes }) {
     <section className="section" style={{ background: 'var(--gpi-cream)' }}>
       <div className="container">
         <SectionHeader eyebrow="Our causes" title="Where your support goes." linkTo="/causes" linkLabel="All causes" tone="cream" />
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {causes.map((c) => {
             const style = categoryStyles[c.category] || categoryStyles.other;
             const MI = metaIcon(c.category);
@@ -251,7 +251,7 @@ function Mission() {
   return (
     <section className="section" style={{ background: '#fff' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '560px 1fr', gap: 72, alignItems: 'center' }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: '560px 1fr', gap: 72, alignItems: 'center' }}>
           <Reveal>
             <div className="media" style={{ borderRadius: 24, height: 600, boxShadow: 'var(--gpi-shadow-raised)', position: 'relative', backgroundImage: `url(${IMG.mission})` }}>
               <div style={{ position: 'absolute', left: 24, bottom: 24, background: 'var(--gpi-ink)', borderRadius: 16, padding: 18, width: 192 }}>
@@ -273,7 +273,7 @@ function Mission() {
             </p>
 
             <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 20 }}>
-              <MissionItem icon={<Eye size={20} color="#B4285A" />} tint="#F8E9EE" title="Our vision" text="A society where girls and women live free of discrimination, violence and poverty." />
+              <MissionItem icon={<Eye size={20} color="#BF3654" />} tint="#F8E9EE" title="Our vision" text="A society where girls and women live free of discrimination, violence and poverty." />
               <div style={{ height: 1, background: 'var(--gpi-divider)' }} />
               <MissionItem icon={<Target size={20} color="#1F6F5C" />} tint="#E7F1EE" title="Our mission" text="To equip children and young females with information, skills and support so they can make their own decisions and claim their rights." />
             </div>
@@ -313,7 +313,7 @@ function QuoteBand() {
     <section style={{ background: 'var(--gpi-primary-tint)' }}>
       <div className="container" style={{ paddingTop: 80, paddingBottom: 80, textAlign: 'center' }}>
         <Reveal>
-        <Quote size={40} color="#B4285A" />
+        <Quote size={40} color="#BF3654" />
         <blockquote
           style={{
             fontFamily: 'var(--gpi-serif)', fontWeight: 700, fontSize: 34, lineHeight: 1.35,
@@ -342,10 +342,10 @@ function EventsSection({ featured, events }) {
     <section className="section" style={{ background: '#fff' }}>
       <div className="container">
         <SectionHeader eyebrow="Events" title="Meet us in the field." linkTo="/news" linkLabel="All events" />
-        <div style={{ display: 'grid', gridTemplateColumns: '848px 1fr', gap: 24 }}>
+        <div className="r-grid" style={{ display: 'grid', gridTemplateColumns: '848px 1fr', gap: 24 }}>
           {/* Featured */}
-          <div className="card" style={{ borderRadius: 20, background: 'var(--gpi-cream)', display: 'flex' }}>
-            <div className="media" style={{ width: 340, height: 420, flexShrink: 0, backgroundImage: `url(${IMG.community})` }} />
+          <div className="card r-col" style={{ borderRadius: 20, background: 'var(--gpi-cream)', display: 'flex' }}>
+            <div className="media m-full" style={{ width: 340, height: 420, flexShrink: 0, backgroundImage: `url(${IMG.community})` }} />
             <div style={{ padding: '52px 32px', flex: 1 }}>
               <div style={{ display: 'flex', gap: 8 }}>
                 {featured.tag_primary && <span className="tag" style={{ background: 'var(--gpi-primary)', color: '#fff' }}>{featured.tag_primary}</span>}
@@ -404,9 +404,9 @@ function BlogSection({ news }) {
     <section className="section" style={{ background: 'var(--gpi-cream)' }}>
       <div className="container">
         <SectionHeader eyebrow="From the field" title="Writing from the work." linkTo="/news" linkLabel="All stories" tone="cream" />
-        <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {news.slice(0, 3).map((n) => {
-            const color = newsCategoryColors[n.category] || '#B4285A';
+            const color = newsCategoryColors[n.category] || '#BF3654';
             const avatar = newsCategoryAvatars[n.category] || '#E4CDD6';
             const catLabel = n.category === 'field-notes' ? 'Field notes' : n.category === 'news' ? 'News' : 'Analysis';
             return (

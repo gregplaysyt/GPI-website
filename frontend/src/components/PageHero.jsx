@@ -8,7 +8,7 @@ export default function PageHero({ crumb, headline, lead, children }) {
   return (
     <section style={{ background: 'var(--gpi-cream)' }}>
       <div className="container" style={{ paddingTop: 72, paddingBottom: 72 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 48, alignItems: 'flex-start' }}>
+        <div className="r-row" style={{ display: 'flex', justifyContent: 'space-between', gap: 48, alignItems: 'flex-start' }}>
           <Reveal style={{ maxWidth: 820, flex: 1 }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
               <Link to="/" style={{ color: '#111827' }}>Home</Link>
