@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <script>
+      // Single-page-app routing on GitHub Pages.
+      //
+      // When someone opens a sub-page directly (e.g. /GPI-website/about),
+      // GitHub Pages can't find an "about" file and serves this 404 page.
+      // We turn the path into a query string on the app root
+      // (/GPI-website/?/about), which loads index.html. A small script there
+      // (see index.html) reads that query and restores the real path.
+      //
+      // pathSegmentsToKeep is 1 because the repo name (GPI-website) is the
+      // first path segment under the domain; we keep it so the redirect stays
+      // inside the correct sub-folder.
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </body>
+</html>
