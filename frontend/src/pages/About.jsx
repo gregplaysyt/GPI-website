@@ -168,14 +168,14 @@ function Timeline() {
 /* ------------------------ Values & leadership ---------------------- */
 function ValuesLeadership() {
   const values = [
-    { n: '01', title: 'Feminism', body: 'We name patriarchy as the problem, not girls as the failure.', tint: '#F8E9EE', fg: '#A52A46', accent: false },
+    { n: '01', title: 'Feminism', body: 'We name patriarchy as the problem, not girls as the failure.', tint: '#ffebeb', fg: '#cc0000', accent: false },
     { n: '02', title: 'Integrity', body: 'What we tell a girl in a club is what we tell a donor in a report.', tint: '#E7F1EE', fg: '#1F6F5C', accent: false },
     { n: '03', title: 'Accountability', body: 'Every programme is measured with the people it is meant to serve.', tint: '#FDF1E0', fg: '#A65C12', accent: false },
     { n: '04', title: 'Solidarity', body: 'We work with boys, families, schools and rulers, not against them.', tint: '#EDEAF6', fg: '#4B4184', accent: false },
-    { n: '05', title: 'Girl-led', body: 'Our clubs are led by the girls themselves, with adults in support.', tint: '#C33A69', fg: '#fff', accent: true },
+    { n: '05', title: 'Girl-led', body: 'Our clubs are led by the girls themselves, with adults in support.', tint: '#e60000', fg: '#fff', accent: true },
   ];
   const leaders = [
-    { initials: 'AO', name: 'Anthonia Odey', role: 'National Coordinator', city: 'Calabar', tint: '#F8E9EE' },
+    { initials: 'AO', name: 'Anthonia Odey', role: 'National Coordinator', city: 'Calabar', tint: '#ffebeb' },
     { initials: 'GI', name: 'Grace Ibekwe', role: 'Head of Programmes', city: 'Benin City', tint: '#E7F1EE' },
     { initials: 'HB', name: 'Hauwa Baba', role: 'SRHR Lead', city: 'Jos', tint: '#FDF1E0' },
     { initials: 'CA', name: 'Chidi Amadi', role: 'M&E Lead', city: 'Lagos', tint: '#EDEAF6' },
@@ -215,7 +215,7 @@ function ValuesLeadership() {
               <div style={{ fontSize: 17, fontWeight: 700, color: v.accent ? '#fff' : 'var(--gpi-ink)', marginTop: 16, lineHeight: 1.4 }}>
                 {v.title}
               </div>
-              <div style={{ fontSize: 13, lineHeight: 1.6, color: v.accent ? '#fbe4ea' : 'var(--gpi-muted)', marginTop: 10 }}>
+              <div style={{ fontSize: 13, lineHeight: 1.6, color: v.accent ? '#ffe5e5' : 'var(--gpi-muted)', marginTop: 10 }}>
                 {v.body}
               </div>
             </StaggerItem>

@@ -151,7 +151,7 @@ export default function Footer() {
               </button>
             </form>
             {status === 'done' && <p style={{ fontSize: 12, color: '#9fd8c4', marginTop: 8 }}>Thanks — you are subscribed.</p>}
-            {status === 'error' && <p style={{ fontSize: 12, color: '#f2b8cd', marginTop: 8 }}>Something went wrong. Please try again.</p>}
+            {status === 'error' && <p style={{ fontSize: 12, color: '#ffb3b3', marginTop: 8 }}>Something went wrong. Please try again.</p>}
           </div>
         </div>
       </div>

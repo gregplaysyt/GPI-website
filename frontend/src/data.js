@@ -3,7 +3,7 @@
 
 export const fallbackProgrammes = [
   {
-    id: 1, title: 'Protection of the girl child', icon: 'shield', accent: '#BF3654',
+    id: 1, title: 'Protection of the girl child', icon: 'shield', accent: '#ff0000',
     summary: "Challenging the socialisation that weakens girls' protection and decision making in public and private life.",
   },
   {
@@ -112,16 +112,16 @@ export const fallbackNews = [
 
 // Category styling: label, tag tint, icon tint, text colour, avatar colour.
 export const categoryStyles = {
-  education: { label: 'Education', tint: '#F8E9EE', fg: '#A52A46', icon: 'graduation-cap' },
+  education: { label: 'Education', tint: '#ffebeb', fg: '#cc0000', icon: 'graduation-cap' },
   'safe-spaces': { label: 'Safe spaces', tint: '#E7F1EE', fg: '#1F6F5C', icon: 'home' },
   health: { label: 'Health', tint: '#FDF1E0', fg: '#A65C12', icon: 'book-open' },
   livelihood: { label: 'Livelihood', tint: '#EDEAF6', fg: '#4B4184', icon: 'coins' },
-  protection: { label: 'Protection', tint: '#F8E9EE', fg: '#A52A46', icon: 'shield' },
-  other: { label: 'Our work', tint: '#F8E9EE', fg: '#A52A46', icon: 'sparkles' },
+  protection: { label: 'Protection', tint: '#ffebeb', fg: '#cc0000', icon: 'shield' },
+  other: { label: 'Our work', tint: '#ffebeb', fg: '#cc0000', icon: 'sparkles' },
 };
 
 export const newsCategoryColors = {
-  analysis: '#BF3654',
+  analysis: '#ff0000',
   'field-notes': '#1F6F5C',
   news: '#A65C12',
   report: '#4B4184',
@@ -135,7 +135,7 @@ export const newsCategoryLabels = {
 };
 
 export const newsCategoryAvatars = {
-  analysis: '#E4CDD6',
+  analysis: '#ffd4d4',
   'field-notes': '#D9E6E1',
   news: '#F5E5CB',
   report: '#E3DFF4',

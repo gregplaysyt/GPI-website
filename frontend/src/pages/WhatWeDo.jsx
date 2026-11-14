@@ -18,7 +18,7 @@ const programmeIcons = {
   coins: HandCoins,
 };
 const programmeTints = {
-  '#BF3654': '#F8E9EE',
+  '#ff0000': '#ffebeb',
   '#1F6F5C': '#E7F1EE',
   '#A65C12': '#FDF1E0',
   '#4B4184': '#EDEAF6',
@@ -26,7 +26,7 @@ const programmeTints = {
 
 // Photo for each programme block, keyed by its accent colour.
 const programmePhotos = {
-  '#BF3654': IMG.protection,
+  '#ff0000': IMG.protection,
   '#1F6F5C': IMG.health,
   '#A65C12': IMG.leadership,
   '#4B4184': IMG.livelihood,
@@ -38,7 +38,7 @@ const programmes = [
     id: 1,
     label: 'Programme 01',
     eyebrow: 'Protection',
-    accent: '#BF3654',
+    accent: '#ff0000',
     headline: 'Protection of the girl child and young females.',
     body: "The socialisation of girls weakens their protection and their decision making in public and private spheres. We work with girls, their families and local authorities so that protection becomes a shared duty rather than a private hope.",
     outcomes: [
@@ -92,8 +92,8 @@ const barriers = [
   {
     label: 'Barrier 01',
     icon: Scale,
-    color: '#BF3654',
-    tint: '#F8E9EE',
+    color: '#ff0000',
+    tint: '#ffebeb',
     title: 'Patriarchal values and gender stereotypes',
     body: 'Girls are taught to defer before they are taught to read. The message arrives from family, school, worship and media at once.',
   },
@@ -194,8 +194,8 @@ function Hero() {
             {hero.body}
           </p>
           <div style={{ display: 'flex', gap: 12 }}>
-            <HeroPill icon={<Users size={16} color="#F2B8CD" />} label="5 centres" />
-            <HeroPill icon={<GraduationCap size={16} color="#F2B8CD" />} label="45 schools" />
+            <HeroPill icon={<Users size={16} color="#ffb3b3" />} label="5 centres" />
+            <HeroPill icon={<GraduationCap size={16} color="#ffb3b3" />} label="45 schools" />
           </div>
         </div>
 
@@ -298,7 +298,7 @@ function ProgrammesIntro() {
         <Stagger style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
           {fallbackProgrammes.map((p) => {
             const Icon = programmeIcons[p.icon] || ShieldCheck;
-            const tint = programmeTints[p.accent] || '#F8E9EE';
+            const tint = programmeTints[p.accent] || '#ffebeb';
             return (
               <StaggerItem key={p.id} className="card" style={{ background: 'var(--gpi-cream)', borderRadius: 20, padding: 28 }}>
                 <div
@@ -419,7 +419,7 @@ function HowWeWork() {
                 <span
                   style={{
                     display: 'inline-flex', alignItems: 'center', height: 23, padding: '0 12px',
-                    borderRadius: 999, background: highlight ? '#C33A69' : 'var(--gpi-ink)',
+                    borderRadius: 999, background: highlight ? '#e60000' : 'var(--gpi-ink)',
                     fontSize: 11, fontWeight: 700, color: '#fff',
                   }}
                 >
@@ -428,7 +428,7 @@ function HowWeWork() {
                 <h3 style={{ fontFamily: 'var(--gpi-sans)', fontSize: 18, fontWeight: 700, lineHeight: 1.39, color: highlight ? '#fff' : 'var(--gpi-ink)', marginTop: 16 }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: 13, lineHeight: 1.62, color: highlight ? '#FBE4EA' : 'var(--gpi-muted)', marginTop: 8 }}>
+                <p style={{ fontSize: 13, lineHeight: 1.62, color: highlight ? '#ffe5e5' : 'var(--gpi-muted)', marginTop: 8 }}>
                   {s.body}
                 </p>
               </StaggerItem>

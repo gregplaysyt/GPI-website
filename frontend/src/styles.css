@@ -3,11 +3,11 @@
    ============================================================ */
 :root {
   /* Brand */
-  --gpi-primary: #bf3654;
-  --gpi-primary-dark: #a52a46;
-  --gpi-primary-tint: #f8e9ee;
-  --gpi-primary-soft: #e4cdd6;
-  --gpi-pink-on-dark: #f2b8cd;
+  --gpi-primary: #ff0000;
+  --gpi-primary-dark: #cc0000;
+  --gpi-primary-tint: #ffebeb;
+  --gpi-primary-soft: #ffd4d4;
+  --gpi-pink-on-dark: #ffb3b3;
 
   /* Ink / neutrals */
   --gpi-ink: #12141a;
@@ -17,7 +17,7 @@
   --gpi-icon: #8a8177;
   --gpi-faint: #b9b2aa;
   --gpi-dot: #c6bfb6;
-  --gpi-quote: #3d1226;
+  --gpi-quote: #400000;
 
   /* Surfaces */
   --gpi-cream: #fbf7f3;

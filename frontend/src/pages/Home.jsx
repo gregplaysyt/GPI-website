@@ -24,7 +24,7 @@ import { Reveal, Stagger, StaggerItem } from '../motion.jsx';
 const programmeIcons = {
   shield: ShieldCheck, 'heart-pulse': HeartPulse, megaphone: Megaphone, coins: HandCoins,
 };
-const programmeTints = { '#BF3654': '#F8E9EE', '#1F6F5C': '#E7F1EE', '#A65C12': '#FDF1E0', '#4B4184': '#EDEAF6' };
+const programmeTints = { '#ff0000': '#ffebeb', '#1F6F5C': '#E7F1EE', '#A65C12': '#FDF1E0', '#4B4184': '#EDEAF6' };
 
 function metaIcon(cat) {
   const map = { education: MapPin, 'safe-spaces': Clock, health: Users, livelihood: Users, protection: MapPin };
@@ -182,7 +182,7 @@ function ProgrammesSection({ programmes }) {
         <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
           {programmes.map((p) => {
             const Icon = programmeIcons[p.icon] || ShieldCheck;
-            const tint = programmeTints[p.accent] || '#F8E9EE';
+            const tint = programmeTints[p.accent] || '#ffebeb';
             return (
               <StaggerItem key={p.id} className="card" style={{ background: 'var(--gpi-cream)', borderRadius: 20, padding: 28 }}>
                 <div style={{ width: 52, height: 52, borderRadius: 14, background: tint, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -273,7 +273,7 @@ function Mission() {
             </p>
 
             <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 20 }}>
-              <MissionItem icon={<Eye size={20} color="#BF3654" />} tint="#F8E9EE" title="Our vision" text="A society where girls and women live free of discrimination, violence and poverty." />
+              <MissionItem icon={<Eye size={20} color="#ff0000" />} tint="#ffebeb" title="Our vision" text="A society where girls and women live free of discrimination, violence and poverty." />
               <div style={{ height: 1, background: 'var(--gpi-divider)' }} />
               <MissionItem icon={<Target size={20} color="#1F6F5C" />} tint="#E7F1EE" title="Our mission" text="To equip children and young females with information, skills and support so they can make their own decisions and claim their rights." />
             </div>
@@ -313,7 +313,7 @@ function QuoteBand() {
     <section style={{ background: 'var(--gpi-primary-tint)' }}>
       <div className="container" style={{ paddingTop: 80, paddingBottom: 80, textAlign: 'center' }}>
         <Reveal>
-        <Quote size={40} color="#BF3654" />
+        <Quote size={40} color="#ff0000" />
         <blockquote
           style={{
             fontFamily: 'var(--gpi-serif)', fontWeight: 700, fontSize: 34, lineHeight: 1.35,
@@ -406,8 +406,8 @@ function BlogSection({ news }) {
         <SectionHeader eyebrow="From the field" title="Writing from the work." linkTo="/news" linkLabel="All stories" tone="cream" />
         <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {news.slice(0, 3).map((n) => {
-            const color = newsCategoryColors[n.category] || '#BF3654';
-            const avatar = newsCategoryAvatars[n.category] || '#E4CDD6';
+            const color = newsCategoryColors[n.category] || '#ff0000';
+            const avatar = newsCategoryAvatars[n.category] || '#ffd4d4';
             const catLabel = n.category === 'field-notes' ? 'Field notes' : n.category === 'news' ? 'News' : 'Analysis';
             return (
               <StaggerItem key={n.id} style={{ display: 'flex' }}>

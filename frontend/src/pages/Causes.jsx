@@ -293,13 +293,13 @@ function Spotlight() {
           </div>
 
           <div className="spotlight-side" style={{ flex: '0 0 420px', background: 'var(--gpi-primary)', padding: 40, display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1.4, textTransform: 'uppercase', color: '#FBE4EA' }}>
+            <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1.4, textTransform: 'uppercase', color: '#ffe5e5' }}>
               Support this cause
             </span>
             <h3 style={{ fontFamily: 'var(--gpi-serif)', fontWeight: 700, fontSize: 26, lineHeight: 1.3, color: '#fff', marginTop: 12 }}>
               Every gift goes to the clubs.
             </h3>
-            <p style={{ fontSize: 13, lineHeight: 1.7, color: '#FBE4EA', marginTop: 16 }}>
+            <p style={{ fontSize: 13, lineHeight: 1.7, color: '#ffe5e5', marginTop: 16 }}>
               Choose an amount on the giving page, or set up a monthly gift and cancel whenever you like.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 24, marginBottom: 32 }}>
@@ -391,7 +391,7 @@ function PlusIcon() {
 function MinusIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <path d="M3 9h12" stroke="#BF3654" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M3 9h12" stroke="#ff0000" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }

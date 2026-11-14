@@ -57,16 +57,16 @@ const ways = [
   {
     key: 'give',
     icon: Heart,
-    iconBg: '#C33A69',
+    iconBg: '#e60000',
     iconColor: '#fff',
     bg: 'var(--gpi-primary)',
     title: 'Give monthly',
     titleColor: '#fff',
     body: 'A monthly gift keeps our centres open and our clubs running all year. Cancel any time, no questions asked.',
-    bodyColor: '#FBE4EA',
+    bodyColor: '#ffe5e5',
     cta: 'Start giving',
     ctaBg: '#fff',
-    ctaColor: '#A52A46',
+    ctaColor: '#cc0000',
     to: '/causes',
   },
   {
@@ -372,7 +372,7 @@ function ContactSection() {
                   gap: 8, height: 35, padding: '0 16px', borderRadius: 999, background: 'var(--gpi-ink)',
                 }}
               >
-                <MapPin size={14} color="#F2B8CD" />
+                <MapPin size={14} color="#ffb3b3" />
                 <span style={{ fontSize: 12, fontWeight: 500, color: '#fff' }}>National secretariat, Calabar</span>
               </div>
             </div>

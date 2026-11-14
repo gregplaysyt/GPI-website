@@ -23,7 +23,7 @@ export default function DonateBand() {
             <h2 style={{ color: '#fff', fontSize: 42, lineHeight: 1.2, letterSpacing: -0.8, marginTop: 12 }}>
               Stand with a girl for the whole year.
             </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.75, color: '#fbe4ea', marginTop: 16, maxWidth: 680 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.75, color: '#ffe5e5', marginTop: 16, maxWidth: 680 }}>
               A gift keeps our centres open, our clubs running and our counselling line answered,
               whatever the month brings.
             </p>
@@ -43,7 +43,7 @@ export default function DonateBand() {
               <span
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8, height: 31,
-                  padding: '0 16px', borderRadius: 999, background: '#c33a69', fontSize: 12, fontWeight: 500,
+                  padding: '0 16px', borderRadius: 999, background: '#e60000', fontSize: 12, fontWeight: 500,
                 }}
               >
                 <ShieldCheck size={14} /> Secure giving
@@ -51,7 +51,7 @@ export default function DonateBand() {
               <span
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8, height: 31,
-                  padding: '0 16px', borderRadius: 999, background: '#c33a69', fontSize: 12, fontWeight: 500,
+                  padding: '0 16px', borderRadius: 999, background: '#e60000', fontSize: 12, fontWeight: 500,
                 }}
               >
                 <MapPin size={14} /> Choose a centre

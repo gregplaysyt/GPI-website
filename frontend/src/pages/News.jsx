@@ -140,7 +140,7 @@ function ArticlesGrid({ articles }) {
 
         <Stagger className="r-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {articles.map((n) => {
-            const color = newsCategoryColors[n.category] || '#BF3654';
+            const color = newsCategoryColors[n.category] || '#ff0000';
             const label = newsCategoryLabels[n.category] || 'Story';
             return (
               <StaggerItem key={n.id} className="card" style={{ borderRadius: 24 }}>
